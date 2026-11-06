@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#141414">
+<meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<title>VEXERO+</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/mobile.css">
+</head>
+<body>
+<div id="intro" hidden>
+  <div class="in-bg"></div><div class="in-line"></div><div class="in-flare"></div>
+  <div class="in-logo" id="inLogo"></div>
+  <div class="in-ring"></div><div class="in-flash"></div>
+  <div class="in-tag">YOUR PERSONAL CINEMA</div>
+  <div class="in-skip">Click to skip</div>
+</div>
+
+<div id="gate" hidden></div>
+
+<header id="nav" hidden>
+  <a class="logo" href="#/home">VEXERO<span>+</span></a>
+  <nav class="links">
+    <a href="#/home" data-r="home">Home</a>
+    <a href="#/new" data-r="new">New &amp; Popular</a>
+    <a href="#/mylist" data-r="mylist">My List</a>
+    <div class="dd"><button class="dd-btn" id="genreBtn">Browse ▾</button><div class="dd-menu" id="genreMenu"></div></div>
+  </nav>
+  <div class="nav-right">
+    <div class="search" id="search"><button id="searchBtn" aria-label="Search">⌕</button><input id="searchInput" type="search" placeholder="Titles, genres…" autocomplete="off"></div>
+    <button class="nbtn" id="surpriseBtn" title="Surprise me" aria-label="Surprise me">🎲</button>
+    <div class="dd"><button class="nbtn" id="bellBtn" aria-label="Notifications">🔔<i id="bellDot"></i></button><div class="dd-menu right" id="bellMenu"></div></div>
+    <div class="dd"><button class="avatar-btn" id="profileBtn" aria-label="Profile"></button><div class="dd-menu right" id="profileMenu"></div></div>
+  </div>
+</header>
+
+<main id="app"></main>
+<div id="pop"></div>
+<div id="modal" hidden></div>
+
+<div id="player" hidden>
+  <video id="pv" playsinline preload="metadata"></video>
+  <div class="p-shade top"></div><div class="p-shade bot"></div>
+  <div class="p-spin"></div>
+  <div class="p-flash" id="pFlash"></div>
+  <div class="p-top"><button class="pbtn" id="pBack" aria-label="Back">←</button><div><div class="p-title" id="pTitle"></div><div class="p-sub" id="pSub"></div></div></div>
+  <button class="p-skip" id="pSkip" hidden>Skip Intro ⏭</button>
+  <div class="p-next" id="pNext" hidden><div class="p-next-t">Next Episode</div><div class="p-next-n" id="pNextName"></div><div class="p-next-b"><button id="pNextPlay">▶ Play now</button><button id="pNextCancel">✕</button></div><i></i></div>
+  <div class="p-bottom">
+    <div class="p-seek" id="pSeek"><div class="p-buf" id="pBuf"></div><div class="p-prog" id="pProg"></div><div class="p-knob" id="pKnob"></div>
+      <div class="p-tip" id="pTip"><canvas id="pTipC" width="224" height="126"></canvas><span id="pTipT">0:00</span></div></div>
+    <div class="p-row">
+      <button class="pbtn" id="pPlay" aria-label="Play/Pause"></button>
+      <button class="pbtn" id="pBk" aria-label="Back 10s">⟲<small>10</small></button>
+      <button class="pbtn" id="pFw" aria-label="Forward 10s">⟳<small>10</small></button>
+      <div class="p-vol"><button class="pbtn" id="pMute" aria-label="Mute">🔊</button><input id="pVol" type="range" min="0" max="1" step="0.02" value="1"></div>
+      <div class="p-time"><span id="pCur">0:00</span> / <span id="pDur">0:00</span></div>
+      <div class="spacer"></div>
+      <button class="pbtn" id="pNextBtn" hidden aria-label="Next episode">⏭</button>
+      <button class="pbtn" id="pEps" hidden aria-label="Episodes">☰</button>
+      <button class="pbtn" id="pCC" aria-label="Subtitles">CC</button>
+      <button class="pbtn" id="pSpeed" aria-label="Speed">1×</button>
+      <button class="pbtn" id="pSleep" aria-label="Sleep timer">☾</button>
+      <button class="pbtn" id="pPip" aria-label="Picture in picture">⧉</button>
+      <button class="pbtn" id="pFs" aria-label="Fullscreen">⛶</button>
+    </div>
+  </div>
+  <div class="p-menu" id="pMenu" hidden></div>
+  <div class="p-err" id="pErr" hidden><div><h3>Can't play this video</h3><p>This file format or codec isn't supported by your browser. MP4 (H.264 + AAC) works everywhere; MKV/AVI work only in some browsers.</p><button id="pRetry">Try again</button> <button id="pErrClose">Close</button></div></div>
+</div>
+
+<nav id="tabbar" hidden aria-label="Main"></nav>
+<div id="toast"></div>
+<script src="/icons.js"></script>
+<script src="/player.js"></script>
+<script src="/app.js"></script>
+<script src="/mobile.js"></script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: vexero-plus
+    runtime: node
+    plan: starter            # persistent disk needs a paid plan; on "free" catalog/profiles reset on every redeploy/restart
+    buildCommand: echo "no build step"
+    startCommand: node server.js
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: VEXERO_API_KEY
+        sync: false          # you enter this in the Render dashboard (never commit it)
+      - key: DATA_DIR
+        value: /var/data
+      - key: STREAM_MODE
+        value: redirect      # redirect = movie goes straight PC -> viewer (saves Render bandwidth)
+      - key: NODE_VERSION
+        value: "20"
+    disk:
+      name: vexero-data
+      mountPath: /var/data
+      sizeGB: 1

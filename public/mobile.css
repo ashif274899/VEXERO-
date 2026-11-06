@@ -1,0 +1,47 @@
+/* VEXERO+ mobile-only design (loaded only on screens <=760px). Desktop styles are untouched. */
+.ic{width:1.15em;height:1.15em;vertical-align:-.2em;flex:none}.ic-w{display:contents}
+#tabbar{display:none}
+@media (max-width:760px){
+ :root{--pad:16px;--n:3}
+ html{-webkit-tap-highlight-color:transparent}body{overscroll-behavior-y:none;-webkit-text-size-adjust:100%}
+ #nav{height:calc(52px + env(safe-area-inset-top));padding:env(safe-area-inset-top) 14px 0;gap:10px;background:linear-gradient(#000c,#0000)!important;backdrop-filter:blur(8px)}
+ #nav .links,#nav #genreBtn,#nav #surpriseBtn{display:none!important}
+ .logo{font-size:26px;letter-spacing:1px}.nav-right{margin-left:auto;gap:6px}
+ .nbtn,.avatar-btn,#searchBtn{min-width:40px;height:40px;font-size:20px;display:inline-flex;align-items:center;justify-content:center}
+ #nav .avatar-btn{display:none}
+ .search.open input{width:52vw}
+ #tabbar{position:fixed;left:0;right:0;bottom:0;z-index:60;display:flex;justify-content:space-around;padding:6px 6px calc(6px + env(safe-area-inset-bottom));background:rgba(14,14,14,.92);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-top:1px solid #ffffff14}
+ #tabbar[hidden]{display:none}
+ #tabbar a{flex:1;display:flex;flex-direction:column;align-items:center;gap:3px;padding:6px 0;color:#8d8d8d;font-size:10.5px;font-weight:600;text-decoration:none;border-radius:12px;transition:color .2s,transform .15s}
+ #tabbar a .ic{width:22px;height:22px}#tabbar a:active{transform:scale(.92)}
+ #tabbar a.on{color:#fff}#tabbar a.on .ic{color:#e50914;filter:drop-shadow(0 0 6px #e5091466)}
+ body.has-tabs #app{padding-bottom:calc(76px + env(safe-area-inset-bottom))}
+ .bb{height:68vh;min-height:430px;max-height:620px}
+ .bb-info{left:16px;right:16px;bottom:14%}.bb-title{font-size:clamp(34px,11vw,48px);line-height:.95}
+ .bb-desc{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;font-size:13.5px}
+ .bb .btn,.btns .btn{min-height:44px;border-radius:10px;font-size:15px;font-weight:700}
+ .row-h{padding:0 16px;font-size:17px}
+ .track,.slider{scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-left:16px;padding-right:16px;scroll-padding:16px}
+ .track::-webkit-scrollbar,.slider::-webkit-scrollbar{display:none}
+ .card{scroll-snap-align:start;border-radius:10px}.card:active{transform:scale(.97)}
+ .grid{grid-template-columns:repeat(3,1fr);gap:10px;padding:0 16px}
+ .page-pad{padding:72px 16px 24px}.page-title{font-size:30px}
+ .special{border-radius:14px;margin:0 16px}
+ #modal .m-box{width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0;margin:0}
+ .m-x{top:calc(10px + env(safe-area-inset-top));right:12px;width:40px;height:40px}
+ .m-hero{height:42vh}
+ .dd-menu{position:fixed;left:12px;right:12px;top:calc(56px + env(safe-area-inset-top));max-height:70vh;overflow:auto;border-radius:14px}
+ #toast{bottom:calc(84px + env(safe-area-inset-bottom))}
+ /* player */
+ .p-top{padding:calc(10px + env(safe-area-inset-top)) 12px 0}
+ .p-bottom{padding:0 14px calc(10px + env(safe-area-inset-bottom))}
+ .p-row{gap:2px;flex-wrap:wrap}.p-row .spacer{display:none}
+ .pbtn{min-width:44px;height:44px;font-size:22px;display:inline-flex;align-items:center;justify-content:center}
+ .pbtn small{font-size:9px;margin-left:-14px;margin-top:2px;font-weight:700}
+ #pPlay{order:-1;width:52px;height:52px}
+ .p-seek{height:24px;margin-bottom:2px;touch-action:none}.p-knob{width:16px;height:16px}
+ #pSleep,#pPip{display:none}
+ .p-tip{display:none}
+}
+@media (max-width:360px){.grid,:root{--n:2}.grid{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:900px) and (orientation:landscape) and (max-height:500px){#tabbar{display:none}.bb{height:100vh}.p-bottom{padding-bottom:6px}}

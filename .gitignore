@@ -1,0 +1,6 @@
+node_modules/
+data/
+movies/
+media-node/node-config.json
+*.part
+.env
