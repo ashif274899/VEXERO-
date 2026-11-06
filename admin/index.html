@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0d0d10">
+<title>VEXERO+ Studio</title>
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/admin/admin.css">
+</head>
+<body>
+<div id="login" hidden>
+  <form class="login-card" id="loginForm" autocomplete="off">
+    <div class="brand big">VEXERO<span>+</span> <small>STUDIO</small></div>
+    <p class="muted" id="loginMsg">Sign in to manage your platform.</p>
+    <input id="lCode" placeholder="Setup code (shown in the server window)" inputmode="numeric" hidden>
+    <input id="lPass" type="password" placeholder="Password" autocomplete="current-password" required>
+    <input id="lPass2" type="password" placeholder="Confirm password" autocomplete="new-password" hidden>
+    <button class="btn red" id="lBtn">Sign in</button>
+    <div class="err" id="lErr"></div>
+  </form>
+</div>
+
+<div id="shell" hidden>
+  <aside id="side">
+    <div class="brand">VEXERO<span>+</span> <small>STUDIO</small></div>
+    <nav id="nav">
+      <a data-v="dash"><i>◧</i>Dashboard</a>
+      <a data-v="library"><i>▤</i>Library</a>
+      <a data-v="upload"><i>⇪</i>Upload</a>
+      <a data-v="import"><i>⇩</i>Import from folder</a>
+      <a data-v="home"><i>★</i>Homepage control</a>
+      <a data-v="viewers"><i>☺</i>Viewers</a>
+      <a data-v="settings"><i>⚙</i>Settings</a>
+    </nav>
+    <div class="side-foot"><a href="/" target="_blank">↗ View site</a><button id="logoutBtn">Sign out</button></div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<div id="drawerBack" hidden></div>
+<aside id="drawer" hidden></aside>
+<div id="toast"></div>
+<script src="/admin/admin.js"></script>
+<script src="/icons.js"></script>
+</body>
+</html>

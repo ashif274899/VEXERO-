@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: vexero-plus
+    runtime: node
+    plan: free               # data is auto-backed-up to your PC (media node) and restored after every restart
+    buildCommand: echo "no build step"
+    startCommand: node server.js
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: VEXERO_API_KEY
+        sync: false          # you enter this in the Render dashboard (never commit it)
+      - key: STREAM_MODE
+        value: redirect      # redirect = movie goes straight PC -> viewer (saves Render bandwidth)
+      - key: NODE_VERSION
+        value: "20"
